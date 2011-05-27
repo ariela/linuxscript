@@ -1,0 +1,21 @@
+escape ^Zz
+
+#スクリーンバッファの設定
+defscrollback 10000
+
+#エンコーディング設定
+defutf8 on
+defkanji utf-8
+encoding utf-8 utf-8
+defencoding utf-8
+
+#シェル設定
+shell -$SHELL
+
+#ステータスラインの設定
+caption always "%{= wk}%`%-w%{=b rw}%n %t%{-}%+w"
+hardstatus alwayslastline "%{=b wk}$USER@$%H %= [%Y/%m/%d %02c:%s]"
+
+vbell off
+startup_message off
+autodetach on
