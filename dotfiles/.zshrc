@@ -157,7 +157,7 @@ freebsd*|darwin*)
     ;;
 linux*)
     alias ls="ls --color=auto -v"
-    alias ll='ls --color=auto -al'
+    alias ll='ls --color=auto -alh'
     alias la='ls --color=auto -a'
     ;;
 esac
