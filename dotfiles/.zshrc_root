@@ -3,10 +3,18 @@
 ## 環境変数設定 ==========================================================
 #
 # パス設定
+
+typeset -xT SUDO_PATH sudo_path
+typeset -U sudo_path
+sudo_path=({,/usr/pkg,/usr/local,/usr}/sbin(N-/))
+
 export PATH=$PATH
 
 # LANG設定
 export LANG=ja_JP.UTF-8
+
+# 実行時間
+REPORTTIME=3
 
 ## デフォルトシェル設定 ==================================================
 # プロンプト設定
@@ -142,6 +150,18 @@ fpath=(${HOME}/.zsh/functions/Completion ${fpath})
 autoload -U compinit
 compinit
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:default' menu select=2 
+zstyle ':completion:*' format '%B%d%b'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[._-]=*'
+zstyle ':completion:*' completer _oldlist _complete _match _history _ignored _approximate _prefix
+zstyle ':completion:*' use-cache yes
+zstyle ':completion:*' verbose yes
+zstyle ':completion:sudo:*' environ PATH="$SUDO_PATH:$PATH"
+setopt complete_in_word
+setopt glob_complete
+setopt hist_expand
+setopt numeric_glob_sort
 
 ##エイリアス設定 =========================================================
 #
