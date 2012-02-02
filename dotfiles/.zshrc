@@ -191,6 +191,7 @@ alias df="df -h"
 alias su="su -l"
 alias sls="screen -ls"
 alias sat="screen -r"
+alias suvi="sudo vim -u ~/.vimrc"
 alias sg="find ./ -type f -print | xargs grep"
 
 ##screen設定 =========================================================
