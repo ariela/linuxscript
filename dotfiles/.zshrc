@@ -8,7 +8,7 @@ typeset -xT SUDO_PATH sudo_path
 typeset -U sudo_path
 sudo_path=({,/usr/pkg,/usr/local,/usr}/sbin(N-/))
 
-export PATH=$PATH
+export PATH=/usr/local/bin:$PATH
 
 # LANG設定
 export LANG=ja_JP.UTF-8
@@ -188,11 +188,11 @@ alias cls='clear'
 alias lf="ls -F"
 alias du="du -h"
 alias df="df -h"
-alias su="su -l"
 alias sls="screen -ls"
 alias sat="screen -r"
 alias suvi="sudo vim -u ~/.vimrc"
 alias sg="find ./ -type f -print | xargs grep"
+alias sudo="sudo PATH=$PATH"
 
 ##screen設定 =========================================================
 #
