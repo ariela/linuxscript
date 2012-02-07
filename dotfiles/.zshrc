@@ -235,3 +235,6 @@ fi
 if [ $SHLVL = 1 ]; then
   screen -R
 fi
+
+# load rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
