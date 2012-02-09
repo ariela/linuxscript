@@ -192,6 +192,11 @@ alias sls="screen -ls"
 alias sat="screen -r"
 alias sg="find ./ -type f -print | xargs grep"
 
+alias vmstart="virsh start"
+alias vmconsole="virsh console"
+alias vmtop="virt-top"
+alias vmlist="virsh list --all"
+
 ##screen設定 =========================================================
 #
 if [ "$TERM" = "screen" ]; then
